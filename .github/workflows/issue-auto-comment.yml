@@ -4,6 +4,10 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
   auto-comment:
     runs-on: ubuntu-latest
@@ -23,7 +27,7 @@ jobs:
                 **Before contributing, please note:**  
                 1️⃣ Make sure you check **#23 – Important Contributing Guidelines for OpenSource Compass**  
                 2️⃣ **PRs should be raised only after the issue is assigned**
-             `   ;
+                    `;
 
             await github.rest.issues.createComment({
               owner: context.repo.owner,
